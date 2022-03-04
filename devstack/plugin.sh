@@ -6,6 +6,8 @@ set -o xtrace
 
 echo_summary "magnum's plugin.sh was called..."
 source $DEST/magnum/devstack/lib/magnum
+source /opt/stack/devstack/openrc
+sudo systemctl restart devstack@q-svc.service
 (set -o posix; set)
 
 if is_service_enabled magnum-api magnum-cond; then
